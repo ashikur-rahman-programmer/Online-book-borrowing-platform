@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "Ariful Islam",
+    "role": "University Student",
+    "image": "https://i.pravatar.cc/150?u=ariful",
+    "description": "Reading progress track korar jonno eita best platform. Amar academic boier pashapashi onno boi porar obhyas ghorte khub shahayyo korche."
+  },
+  {
+    "id": 2,
+    "name": "Sarah Zaman",
+    "role": "Content Creator",
+    "image": "https://i.pravatar.cc/150?u=sarah",
+    "description": "User interface ta khub e clean ar smooth. Boier review gulo dekhe notun boi kinar decision neya ekhon amar jonno onek shohoj hoye geche."
+  },
+  {
+    "id": 3,
+    "name": "Tanvir Ahmed",
+    "role": "Book Enthusiast",
+    "image": "https://i.pravatar.cc/150?u=tanvir",
+    "description": "Community feature ta amar shobcheye beshi bhalo lage. Onno pathok-der sathe boi niye discussion korar moto emon environment ar kothao paini."
+  },
+  {
+    "id": 4,
+    "name": "Nusrat Jahan",
+    "role": "Librarian",
+    "image": "https://i.pravatar.cc/150?u=nusrat",
+    "description": "Professional quality platform. Boier categorization ebong search functionality khub e advanced, ja boi khuje pawa shohoj kore dey."
+  },
+  {
+    "id": 5,
+    "name": "Fahim Shahriar",
+    "role": "Software Engineer",
+    "image": "https://i.pravatar.cc/150?u=fahim",
+    "description": "Next-gen reading experience! Desktop ar mobile dui jaygatei khub smoothly browse kora jay. App layout ta asholei proshongshar dabi rakhe."
+  },
+  {
+    "id": 6,
+    "name": "Mehzabin Chowdhury",
+    "role": "Freelance Writer",
+    "image": "https://i.pravatar.cc/150?u=mehzabin",
+    "description": "Book Growing platform hishebe eta onubodyo. Notun arrivals ar special membership discounts gulo asholei boi-premikder jonno boro shujog."
+  }
+]
