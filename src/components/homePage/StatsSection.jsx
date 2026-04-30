@@ -4,7 +4,7 @@ import React from "react";
 const StatsSection = async () => {
   const stats = await statsDataFetch();
   return (
-    <section className="container mx-auto py-20 text-center px-4">
+    <section className="container mx-auto py-30 text-center px-4">
       {/* Top Text */}
       <p className="text-sm tracking-widest text-red-400 mb-2">AWESOME STATS</p>
 
