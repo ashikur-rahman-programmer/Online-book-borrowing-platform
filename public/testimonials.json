@@ -4,41 +4,41 @@
     "name": "Ariful Islam",
     "role": "University Student",
     "image": "https://i.pravatar.cc/150?u=ariful",
-    "description": "Reading progress track korar jonno eita best platform. Amar academic boier pashapashi onno boi porar obhyas ghorte khub shahayyo korche."
+    "description": "This is the best platform for tracking my reading progress. It has helped me build a habit of reading beyond my academic books."
   },
   {
     "id": 2,
     "name": "Sarah Zaman",
     "role": "Content Creator",
     "image": "https://i.pravatar.cc/150?u=sarah",
-    "description": "User interface ta khub e clean ar smooth. Boier review gulo dekhe notun boi kinar decision neya ekhon amar jonno onek shohoj hoye geche."
+    "description": "The user interface is very clean and smooth. Reading reviews here makes it much easier for me to decide which books to buy."
   },
   {
     "id": 3,
     "name": "Tanvir Ahmed",
     "role": "Book Enthusiast",
     "image": "https://i.pravatar.cc/150?u=tanvir",
-    "description": "Community feature ta amar shobcheye beshi bhalo lage. Onno pathok-der sathe boi niye discussion korar moto emon environment ar kothao paini."
+    "description": "I love the community feature the most. It's great to have a space where readers can discuss books together."
   },
   {
     "id": 4,
     "name": "Nusrat Jahan",
     "role": "Librarian",
     "image": "https://i.pravatar.cc/150?u=nusrat",
-    "description": "Professional quality platform. Boier categorization ebong search functionality khub e advanced, ja boi khuje pawa shohoj kore dey."
+    "description": "A professional-quality platform. The categorization and search functionality make it very easy to find books."
   },
   {
     "id": 5,
     "name": "Fahim Shahriar",
     "role": "Software Engineer",
     "image": "https://i.pravatar.cc/150?u=fahim",
-    "description": "Next-gen reading experience! Desktop ar mobile dui jaygatei khub smoothly browse kora jay. App layout ta asholei proshongshar dabi rakhe."
+    "description": "A next-generation reading experience! It works smoothly on both desktop and mobile. The layout is truly impressive."
   },
   {
     "id": 6,
     "name": "Mehzabin Chowdhury",
     "role": "Freelance Writer",
     "image": "https://i.pravatar.cc/150?u=mehzabin",
-    "description": "Book Growing platform hishebe eta onubodyo. Notun arrivals ar special membership discounts gulo asholei boi-premikder jonno boro shujog."
+    "description": "An excellent platform for book lovers. New arrivals and membership discounts make it even more valuable."
   }
 ]

@@ -60,7 +60,7 @@ export default function Navbar() {
         </ul>
         <div className="  items-center gap-4  flex">
           <NavLink href="/login">
-            <Button variant="outline" size="sm">
+            <Button variant="secondary" size="lg">
               Login
             </Button>
           </NavLink>

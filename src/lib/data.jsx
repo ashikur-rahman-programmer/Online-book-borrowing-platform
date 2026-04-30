@@ -8,3 +8,8 @@ export const testimonialsDataFetch = async () => {
   const data = await res.json();
   return data;
 };
+export const statsDataFetch = async () => {
+  const res = await fetch("http://localhost:3000/stats.json");
+  const data = await res.json();
+  return data;
+};

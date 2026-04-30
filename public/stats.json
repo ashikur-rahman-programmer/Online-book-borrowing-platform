@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "number": "736k",
+    "label": "Total Pages",
+    "icon": "📄"
+  },
+  {
+    "id": 2,
+    "number": "875k",
+    "label": "Active Readers",
+    "icon": "📖"
+  },
+  {
+    "id": 3,
+    "number": "41k",
+    "label": "Working Hours",
+    "icon": "⏳"
+  },
+  {
+    "id": 4,
+    "number": "992k",
+    "label": "Total Sells",
+    "icon": "🛒"
+  },
+  {
+    "id": 5,
+    "number": "690",
+    "label": "Cups Coffee",
+    "icon": "☕"
+  }
+]
