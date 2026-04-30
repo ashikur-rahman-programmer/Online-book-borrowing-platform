@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Banner = () => {
   return (
-    <div className="py-10 text-center">
+    <div className="text-center">
       <h1
         className="text-5xl md:text-7xl font-bold mb-4 tracking-tight
           bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-600 

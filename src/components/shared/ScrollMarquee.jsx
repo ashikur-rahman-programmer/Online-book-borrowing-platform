@@ -7,7 +7,7 @@ const ScrollMarquee = async () => {
   const books = await booksDataFetch();
   // console.log(books);
   return (
-    <div className="bg-gray-200 text-black py-2 pr-4 flex items-center gap-4 overflow-hidden">
+    <div className="bg-gray-200 text-black py-2  pr-4 flex items-center gap-4 overflow-hidden">
       <Button variant="secondary" size="lg">
         Latest Updates
       </Button>
