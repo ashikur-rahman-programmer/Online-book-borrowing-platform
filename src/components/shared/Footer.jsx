@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <footer className="bg-black w-full text-white pt-16 pb-8 px-6">
       <div className="container mx-auto">
-        <div className="grid md:grid-cols-3 place-items-center gap-10">
+        <div className="grid md:grid-cols-3 md:place-items-center gap-10">
           {/* Logo / About */}
           <div>
             <Link href="/">

@@ -8,7 +8,7 @@ const TestimonialSection = async () => {
     <section className="bg-[#e9dfdb] py-10 w-full">
       <div className="container mx-auto py-10 px-4 text-center">
         <p className="text-sm tracking-widest text-red-400 mb-2">
-          CLIENT FEEDBACK
+          STUDENT FEEDBACK
         </p>
 
         <h2 className="text-3xl md:text-4xl font-semibold text-[#2c3e50] mb-4">
