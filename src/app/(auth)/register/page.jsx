@@ -10,18 +10,30 @@ import {
   Label,
   TextField,
 } from "@heroui/react";
-import { Icon } from "@iconify/react";
 import Link from "next/link";
 
-const LoginPage = () => {
+const RegisterPage = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
   };
+
   return (
     <Card className="border mx-auto w-125 py-10 mt-12">
-      <h1 className="text-center text-2xl font-bold">Login</h1>
+      <h1 className="text-center text-2xl font-bold">Register</h1>
 
       <Form className="flex w-96 mx-auto flex-col gap-4" onSubmit={onSubmit}>
+        <TextField isRequired name="name" type="text">
+          <Label>Name</Label>
+          <Input placeholder="Enter your name" />
+          <FieldError />
+        </TextField>
+
+        <TextField isRequired name="image" type="text">
+          <Label>Image URL</Label>
+          <Input placeholder="Image URL" />
+          <FieldError />
+        </TextField>
+
         <TextField
           isRequired
           name="email"
@@ -66,28 +78,15 @@ const LoginPage = () => {
           <FieldError />
         </TextField>
 
-        <div className="flex gap-2">
+        <Link href="/login" className="flex gap-2">
           <Button type="submit" className="block mx-auto">
             {/* <Check /> */}
-            Login
+            Submit
           </Button>
-        </div>
+        </Link>
       </Form>
-      <p className="text-center font-semibold text-gray-700">Or </p>
-      <Button className="w-full" variant="tertiary">
-        <Icon icon="devicon:google" />
-        Sign in with Google
-      </Button>
-       <div className="mt-6 text-center text-sm">
-          <p className="text-[#706F6F] font-semibold">
-            Don't Have An Account?{" "}
-            <Link href="/register" className="text-[#F34949] hover:underline">
-              Register
-            </Link>
-          </p>
-        </div>
     </Card>
   );
 };
 
-export default LoginPage;
+export default RegisterPage;
