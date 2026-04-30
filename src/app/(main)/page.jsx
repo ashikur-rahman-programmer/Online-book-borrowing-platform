@@ -1,9 +1,11 @@
-import React from "react";
+import Banner from "@/components/homePage/Banner";
+import ScrollMarquee from "@/components/shared/ScrollMarquee";
 
 const Home = () => {
   return (
-    <div>
-      <h2>this is the home page</h2>
+    <div className="container mx-auto">
+      <Banner />
+      <ScrollMarquee />
     </div>
   );
 };
