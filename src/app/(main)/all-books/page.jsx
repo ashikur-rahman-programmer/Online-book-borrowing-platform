@@ -1,27 +1,34 @@
 import BookCard from "@/components/shared/BookCard";
+import SearchInput from "@/components/shared/SearchInput";
 import { booksDataFetch, categoriesDataFetch } from "@/lib/data";
 import { Input } from "@heroui/react";
 import Link from "next/link";
 import React from "react";
 
 const AllBooksPage = async ({ searchParams }) => {
-  const { category } = await searchParams;
+  const { category, search } = await searchParams;
 
   const books = await booksDataFetch();
   const categories = await categoriesDataFetch();
 
-  const filteredBooks = category
-    ? books.filter(
-        (book) => book.category?.toLowerCase() === category.toLowerCase(),
-      )
-    : books;
+  const filteredBooks = books.filter((book) => {
+    // category er logic
+    const showCategories = category
+      ? book.category?.toLowerCase() === category.toLowerCase()
+      : true;
+
+    // search er logic
+    const searchBooks = search
+      ? book.title?.toLowerCase().includes(search.toLowerCase())
+      : true;
+
+    return showCategories && searchBooks;
+  });
 
   return (
     <section className="  py-10">
       <div className="container mx-auto space-y-6">
-        <div className="w-11/12 mx-auto">
-          <Input fullWidth placeholder="Search books..." />
-        </div>
+        <SearchInput />
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 ">
           <div className="md:col-span-3   py-4">
             <h3 className="text-xl font-semibold pb-7 ">Books Categories</h3>
