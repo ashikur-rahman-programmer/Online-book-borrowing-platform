@@ -1,0 +1,19 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Story",
+      "slug": "story"
+    },
+    {
+      "id": 2,
+      "name": "Tech",
+      "slug": "tech"
+    },
+    {
+      "id": 3,
+      "name": "Science",
+      "slug": "science"
+    }
+  ]
+}
