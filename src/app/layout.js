@@ -1,5 +1,6 @@
 import { Montserrat } from "next/font/google";
 import "./globals.css";
+import { ToastContainer } from "react-toastify";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -19,7 +20,10 @@ export default function RootLayout({ children }) {
       className={`${montserrat.className} h-full antialiased`}
       suppressHydrationWarning
     >
-      <body className="bg-gray-100">{children}</body>
+      <body className="bg-gray-100">
+        {children}
+        <ToastContainer />
+      </body>
     </html>
   );
 }

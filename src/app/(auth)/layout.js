@@ -1,3 +1,6 @@
+import dns from "node:dns/promises";
+dns.setServers(["8.8.8.8", "8.8.4.4"]);
+
 import Navbar from "@/components/shared/Navbar";
 import React from "react";
 

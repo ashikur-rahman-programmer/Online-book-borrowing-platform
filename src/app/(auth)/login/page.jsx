@@ -1,4 +1,5 @@
 "use client";
+import { authClient } from "@/lib/auth-client";
 import { Check } from "@gravity-ui/icons";
 import {
   Button,
@@ -12,10 +13,35 @@ import {
 } from "@heroui/react";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { toast } from "react-toastify";
 
 const LoginPage = () => {
+  const router = useRouter();
   const onSubmit = async (e) => {
     e.preventDefault();
+    const formData = new FormData(e.target);
+    const user = Object.fromEntries(formData.entries());
+
+    const { data, error } = await authClient.signIn.email({
+      email: user.email,
+      password: user.password,
+      remember: true,
+      callbackUrl: "/",
+    });
+
+    if (error) {
+      toast.error(error.message);
+    }
+    if (data) {
+      toast.success("Login successful! ");
+      router.push("/");
+    }
+  };
+  const handleGoogleLogin = async () => {
+    const data = await authClient.signIn.social({
+      provider: "google",
+    });
   };
   return (
     <Card className="bg-[#e9dfdb] border mx-auto w-125 py-10 mt-12">
@@ -71,13 +97,13 @@ const LoginPage = () => {
         </button>
       </Form>
       <p className="text-center font-semibold text-gray-700">Or </p>
-      <Button className="w-full" variant="tertiary">
+      <Button onClick={handleGoogleLogin} className="w-full" variant="tertiary">
         <Icon icon="devicon:google" />
         Sign in with Google
       </Button>
       <div className="mt-6 text-center text-sm">
         <p className="text-[#706F6F] font-semibold">
-          Don't Have An Account?{" "}
+          Don't have an account?{" "}
           <Link href="/register" className="text-[#F34949] hover:underline">
             Register
           </Link>

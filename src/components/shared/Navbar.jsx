@@ -1,17 +1,21 @@
 "use client";
 import { useState } from "react";
-import { Link, Button } from "@heroui/react";
+import { Link, Button, Spinner } from "@heroui/react";
 import logoImg from "@/assets/logo.png";
 import NavLink from "./NavLink";
 import Image from "next/image";
+import { authClient, useSession } from "@/lib/auth-client";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const { data: session, isPending } = authClient.useSession();
+  const user = session?.user;
+
   return (
     <nav className="w-full sticky top-0 z-40  border-b border-separator bg-background/70 backdrop-blur-lg">
       <header className="container mx-auto flex h-16  items-center justify-between ">
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 md:gap-4">
           <button
             className="md:hidden"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -58,13 +62,27 @@ export default function Navbar() {
             <NavLink href="/my-profile">My Profile</NavLink>
           </li>
         </ul>
-        <div className="  items-center gap-4  flex">
+        {isPending ? (
+          <Spinner color="success" />
+        ) : user ? (
+          <div className="flex items-center gap-2 md:gap-4">
+            <p className="text-xs whitespace-nowrap pl-1 flex flex-col md:flex-row ">
+              <span>Welcome,</span> {user.name}!
+            </p>
+            <button
+              onClick={async () => await authClient.signOut()}
+              className="px-3 py-1.5 md:px-4 md:py-2 border border-red-400 text-red-400 rounded hover:bg-red-400 hover:text-white transition cursor-pointer"
+            >
+              Logout
+            </button>
+          </div>
+        ) : (
           <NavLink href="/login">
-            <Button variant="secondary" size="lg">
+            <button className="px-4 py-2 border border-red-400 text-red-400 rounded hover:bg-red-400 hover:text-white transition cursor-pointer">
               Login
-            </Button>
+            </button>
           </NavLink>
-        </div>
+        )}
       </header>
       {isMenuOpen && (
         <div className="border-t border-separator md:hidden">
@@ -84,13 +102,6 @@ export default function Navbar() {
                 My Profile
               </NavLink>
             </li>
-            {/* <li className="mt-4  ">
-              <NavLink href="/login" className="block w-full">
-                <Button variant="tertiary" className="w-full">
-                  Login
-                </Button>
-              </NavLink>
-            </li> */}
           </ul>
         </div>
       )}

@@ -1,4 +1,5 @@
 "use client";
+import { authClient } from "@/lib/auth-client";
 import { Check } from "@gravity-ui/icons";
 import {
   Button,
@@ -11,12 +12,32 @@ import {
   TextField,
 } from "@heroui/react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { toast } from "react-toastify";
 
 const RegisterPage = () => {
+  const router = useRouter();
   const onSubmit = async (e) => {
     e.preventDefault();
-  };
+    const formData = new FormData(e.target);
+    const user = Object.fromEntries(formData.entries());
 
+    const { data, error } = await authClient.signUp.email({
+      email: user.email,
+      password: user.password,
+      name: user.name,
+      image: user.image,
+      callbackUrl: "/login",
+    });
+
+    if (error) {
+      toast.error(error.message);
+    }
+    if (data) {
+      toast.success("Registration successful!");
+      router.push("/login");
+    }
+  };
   return (
     <Card className=" bg-[#e9dfdb] border mx-auto w-125 py-10 mt-12">
       <h1 className="text-center text-2xl font-bold">Registration</h1>
@@ -78,11 +99,11 @@ const RegisterPage = () => {
           <FieldError />
         </TextField>
 
-        <Link href="/login" className="flex gap-2">
-          <button className="block mx-auto mt-4 px-6 py-2 border border-red-400 text-red-400 rounded hover:bg-red-400 hover:text-white transition cursor-pointer">
-            Register
-          </button>
-        </Link>
+        {/* <Link href="/login" className="flex gap-2"> */}
+        <button className="block mx-auto mt-4 px-6 py-2 border border-red-400 text-red-400 rounded hover:bg-red-400 hover:text-white transition cursor-pointer">
+          Register
+        </button>
+        {/* </Link> */}
       </Form>
       <div className="mt-6 text-center text-sm">
         <p className="text-[#706F6F] font-semibold">
