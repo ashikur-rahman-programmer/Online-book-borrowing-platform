@@ -5,6 +5,7 @@ import logoImg from "@/assets/logo.png";
 import NavLink from "./NavLink";
 import Image from "next/image";
 import { authClient, useSession } from "@/lib/auth-client";
+import { toast } from "react-toastify";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -74,7 +75,10 @@ export default function Navbar() {
               <span>Welcome,</span> {user.name}!
             </p>
             <button
-              onClick={async () => await authClient.signOut()}
+              onClick={async () => {
+                toast.success("Logging out...");
+                await authClient.signOut();
+              }}
               className="px-3 py-1.5 md:px-4 md:py-2 border border-red-400 text-red-400 rounded hover:bg-red-400 hover:text-white transition cursor-pointer"
             >
               Logout

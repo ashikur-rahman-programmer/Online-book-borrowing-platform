@@ -16,13 +16,13 @@ const MyProfilePage = () => {
           <Card className="w-full max-w-md bg-white/70 backdrop-blur-md border border-gray-200 shadow-xl rounded-2xl">
             <div className="p-8">
               <div className="flex flex-col items-center space-y-6">
-                <div className="relative group">
+                <div className="relative group border-3 shadow-lg border-red-300 rounded-full w-[140px] h-[140px] overflow-hidden">
                   <Image
                     src={user?.image || Avatar}
                     alt="Profile Image"
                     width={140}
                     height={140}
-                    className="rounded-full"
+                    className="rounded-full object-cover"
                   />
                 </div>
 

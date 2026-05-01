@@ -9,23 +9,29 @@ import {
   Label,
   FieldError,
 } from "@heroui/react";
+import { useRouter } from "next/navigation";
+
+import { toast } from "react-toastify";
 
 const EditProfile = () => {
+  const router = useRouter();
   async function handleUpdate(e) {
     e.preventDefault();
 
     const formData = new FormData(e.currentTarget);
-    const name = formData.get("userName");
-    const image = formData.get("userImage");
+    const name = formData.get("name");
+    const image = formData.get("image");
 
     try {
       await authClient.updateUser({
         name: name,
         image: image,
       });
-      alert("Profile Updated!");
+      toast.success("Profile Updated!");
+      router.push("/my-profile");
+      router.refresh();
     } catch (err) {
-      console.error("Error updating profile", err);
+      toast.error("Error updating profile", err);
     }
   }
 
@@ -40,13 +46,13 @@ const EditProfile = () => {
         >
           <TextField isRequired name="name" type="text">
             <Label>Name</Label>
-            <Input placeholder="Change your name" />
+            <Input name="name" placeholder="Change your name" />
             <FieldError />
           </TextField>
 
           <TextField isRequired name="image" type="text">
             <Label>Image URL</Label>
-            <Input placeholder="Change your image URL" />
+            <Input name="image" placeholder="Change your image URL" />
             <FieldError />
           </TextField>
 
