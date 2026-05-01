@@ -18,8 +18,8 @@ const RegisterPage = () => {
   };
 
   return (
-    <Card className="border mx-auto w-125 py-10 mt-12">
-      <h1 className="text-center text-2xl font-bold">Register</h1>
+    <Card className=" bg-[#e9dfdb] border mx-auto w-125 py-10 mt-12">
+      <h1 className="text-center text-2xl font-bold">Registration</h1>
 
       <Form className="flex w-96 mx-auto flex-col gap-4" onSubmit={onSubmit}>
         <TextField isRequired name="name" type="text">
@@ -79,12 +79,19 @@ const RegisterPage = () => {
         </TextField>
 
         <Link href="/login" className="flex gap-2">
-          <Button type="submit" className="block mx-auto">
-            {/* <Check /> */}
-            Submit
-          </Button>
+          <button className="block mx-auto mt-4 px-6 py-2 border border-red-400 text-red-400 rounded hover:bg-red-400 hover:text-white transition cursor-pointer">
+            Register
+          </button>
         </Link>
       </Form>
+      <div className="mt-6 text-center text-sm">
+        <p className="text-[#706F6F] font-semibold">
+          Already have an account?{" "}
+          <Link href="/login" className="text-[#F34949] hover:underline">
+            Login
+          </Link>
+        </p>
+      </div>
     </Card>
   );
 };
