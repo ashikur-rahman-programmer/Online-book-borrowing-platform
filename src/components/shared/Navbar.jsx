@@ -66,7 +66,11 @@ export default function Navbar() {
           <Spinner color="success" />
         ) : user ? (
           <div className="flex items-center gap-2 md:gap-4">
-            <p className="text-xs whitespace-nowrap pl-1 flex flex-col md:flex-row ">
+            <p
+              className="text-xs md:text-lg whitespace-nowrap md:whitespace-normal pl-1 flex flex-col md:gap-2 md:flex-row tracking-tight
+          bg-gradient-to-r from-red-500 to-purple-600 
+          bg-clip-text text-transparent animate-gradient-x"
+            >
               <span>Welcome,</span> {user.name}!
             </p>
             <button
