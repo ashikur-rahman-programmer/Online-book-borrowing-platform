@@ -6,8 +6,10 @@ import NavLink from "./NavLink";
 import Image from "next/image";
 import { authClient, useSession } from "@/lib/auth-client";
 import { toast } from "react-toastify";
+import { useRouter } from "next/navigation";
 
 export default function Navbar() {
+  const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const { data: session, isPending } = authClient.useSession();
@@ -78,6 +80,8 @@ export default function Navbar() {
               onClick={async () => {
                 toast.success("Logging out...");
                 await authClient.signOut();
+                router.push("/login");
+                router.refresh();
               }}
               className="px-3 py-1.5 md:px-4 md:py-2 border border-red-400 text-red-400 rounded hover:bg-red-400 hover:text-white transition cursor-pointer"
             >
