@@ -25,9 +25,9 @@ const BooksDetails = async ({ params }) => {
             </div>
           </div>
 
-          <div className="md:col-span-7 flex flex-col justify-between py-2">
+          <div className="md:col-span-7 flex flex-col justify-center gap-6 py-2">
             <div>
-              <div className="flex justify-between items-start mb-4">
+              <div className="flex gap-2 items-start mb-2">
                 <h1 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-red-500 to-purple-500 bg-clip-text text-transparent leading-tight">
                   {book?.title}
                 </h1>
@@ -40,20 +40,18 @@ const BooksDetails = async ({ params }) => {
                 </Chip>
               </div>
 
-              <p className="text-lg text-gray-400 font-medium mb-6 italic">
+              <p className="text-lg text-gray-400 font-medium mb-4 italic">
                 by <span className="text-blue-400"> {author}</span>
               </p>
 
               <div className="space-y-4">
-                <h3 className="text-lg font-semibold text-gray-200">
-                  Description
-                </h3>
+                <h3 className="text-lg font-semibold  ">Description</h3>
                 <p className="text-gray-700 leading-relaxed text-lg">
                   {description}
                 </p>
               </div>
 
-              <div className="mt-8 flex items-center gap-3">
+              <div className="mt-4 flex items-center gap-3">
                 <span className="text-gray-500 text-sm uppercase tracking-widest font-bold">
                   Availability:
                 </span>
@@ -66,22 +64,24 @@ const BooksDetails = async ({ params }) => {
             </div>
 
             {/* Action Button */}
-            <div className="mt-10">
+            <div className="">
               <Button
                 size="lg"
                 disabled={available_quantity === 0}
-                className={`w-full md:w-64 h-16 text-lg font-bold rounded-xl transition-all duration-300
+                className={` px-6 py-2 border border-red-400 rounded transition cursor-pointer
                   ${
                     available_quantity > 0
-                      ? "bg-blue-600 hover:bg-blue-500 text-white shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:shadow-[0_0_30px_rgba(37,99,235,0.6)]"
+                      ? "bg-transparent text-red-400 hover:bg-red-400 hover:text-white"
                       : "bg-gray-800 text-gray-500 cursor-not-allowed"
                   }`}
               >
+                {/* 
+<button className="mt-10   ">
+          See More
+        </button> */}
+
                 {available_quantity > 0 ? "Borrow This Book" : "Not Available"}
               </Button>
-              <p className="text-xs text-gray-500 mt-3 ml-1">
-                * Terms and conditions apply for borrowing.
-              </p>
             </div>
           </div>
         </div>
