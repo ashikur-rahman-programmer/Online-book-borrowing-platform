@@ -37,7 +37,7 @@ const EditProfile = () => {
   }
 
   return (
-    <section className="py-20 md:py-30 animate__animated animate__fadeIn">
+    <section className="py-20 md:py-30 px-4 animate__animated animate__fadeIn">
       <Card className="border mx-auto w-full max-w-125 py-10 md:py-12 mt-5 animate__animated animate__zoomIn">
         <h1 className="text-center text-2xl font-bold animate__animated animate__fadeInDown">
           Update Profile
