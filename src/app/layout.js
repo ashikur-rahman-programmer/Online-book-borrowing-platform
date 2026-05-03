@@ -8,7 +8,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata = {
-  title: "Online book borrowing platform",
+  title: "BookBorrow - Online book borrowing platform",
   description:
     "An online book borrowing platform built with Next.js, allowing users to browse and borrow books from a digital library.",
 };
