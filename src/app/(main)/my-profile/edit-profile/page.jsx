@@ -37,14 +37,14 @@ const EditProfile = () => {
   }
 
   return (
-    <section className="py-20 animate__animated animate__fadeInUp">
-      <Card className="border mx-auto max-w-125 py-10 mt-5 animate__animated animate__zoomIn">
+    <section className="py-20 md:py-30 animate__animated animate__fadeIn">
+      <Card className="border mx-auto w-full max-w-125 py-10 md:py-12 mt-5 animate__animated animate__zoomIn">
         <h1 className="text-center text-2xl font-bold animate__animated animate__fadeInDown">
           Update Profile
         </h1>
 
         <Form
-          className="flex max-w-96 mx-auto flex-col gap-4 animate__animated animate__fadeIn"
+          className="flex w-full max-w-96 mx-auto flex-col gap-4 animate__animated animate__fadeIn"
           onSubmit={handleUpdate}
         >
           <TextField isRequired name="name" type="text">
