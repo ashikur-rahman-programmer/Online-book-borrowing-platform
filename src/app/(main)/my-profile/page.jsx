@@ -13,13 +13,13 @@ const MyProfilePage = () => {
   return (
     <>
       {isPending && (
-        <div className="flex justify-center py-10 animate__animated animate__fadeIn">
+        <div className="flex justify-center py-10 animate__animated animate__fadeInUp">
           <Spinner color="success" />
         </div>
       )}
 
       {user && (
-        <div className="flex justify-center items-center py-30 animate__animated animate__fadeInUp">
+        <div className="flex justify-center items-center py-10 md:py-30 animate__animated animate__fadeInUp">
           <Card className="w-full max-w-md bg-white/70 backdrop-blur-md border border-gray-200 shadow-xl rounded-2xl animate__animated animate__zoomIn">
             <div className="p-8">
               <div className="flex flex-col items-center space-y-6">

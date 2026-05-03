@@ -2,6 +2,7 @@ import "animate.css";
 import { booksDataFetch } from "@/lib/data";
 import { Button, Card, Chip } from "@heroui/react";
 import Image from "next/image";
+import NotFoundPage from "@/app/not-found";
 
 const BooksDetails = async ({ params }) => {
   const { id } = await params;
@@ -9,6 +10,9 @@ const BooksDetails = async ({ params }) => {
 
   const book = books.find((book) => book.id === parseInt(id));
 
+  if (!book) {
+    return <NotFoundPage />;
+  }
   const { title, author, description, available_quantity, image_url } = book;
 
   return (
