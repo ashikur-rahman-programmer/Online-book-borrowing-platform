@@ -9,13 +9,13 @@ import ScrollMarquee from "@/components/shared/ScrollMarquee";
 const Home = () => {
   return (
     <div>
-      {/* <Banner />
+      <Banner />
       <ScrollMarquee />
       <FeaturedBooks />
       <TestimonialSection />
       <StatsSection />
-      <ContactSection /> */}
-      <Footer />
+      <ContactSection />
+      {/* <Footer /> */}
     </div>
   );
 };
