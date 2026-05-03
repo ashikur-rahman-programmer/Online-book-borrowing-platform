@@ -76,3 +76,11 @@
 // };
 
 // export default AllBooksPage;
+
+import React from "react";
+
+const allBook = () => {
+  return <div>all book</div>;
+};
+
+export default allBook;
