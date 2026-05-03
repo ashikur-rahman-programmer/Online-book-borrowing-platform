@@ -1,4 +1,5 @@
 "use client";
+import "animate.css";
 import { authClient } from "@/lib/auth-client";
 import {
   Input,
@@ -10,11 +11,11 @@ import {
   FieldError,
 } from "@heroui/react";
 import { useRouter } from "next/navigation";
-
 import { toast } from "react-toastify";
 
 const EditProfile = () => {
   const router = useRouter();
+
   async function handleUpdate(e) {
     e.preventDefault();
 
@@ -36,12 +37,14 @@ const EditProfile = () => {
   }
 
   return (
-    <section className="py-20">
-      <Card className="border mx-auto w-125 py-10 mt-5">
-        <h1 className="text-center text-2xl font-bold">Update Profile</h1>
+    <section className="py-20 animate__animated animate__fadeInUp">
+      <Card className="border mx-auto max-w-125 py-10 mt-5 animate__animated animate__zoomIn">
+        <h1 className="text-center text-2xl font-bold animate__animated animate__fadeInDown">
+          Update Profile
+        </h1>
 
         <Form
-          className="flex w-96 mx-auto flex-col gap-4"
+          className="flex max-w-96 mx-auto flex-col gap-4 animate__animated animate__fadeIn"
           onSubmit={handleUpdate}
         >
           <TextField isRequired name="name" type="text">
@@ -56,7 +59,7 @@ const EditProfile = () => {
             <FieldError />
           </TextField>
 
-          <div className="flex gap-2 justify-center">
+          <div className="flex gap-2 justify-center animate__animated animate__fadeInUp">
             <Button type="submit">Update</Button>
           </div>
         </Form>

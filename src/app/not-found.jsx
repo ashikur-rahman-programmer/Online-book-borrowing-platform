@@ -22,7 +22,10 @@ const NotFoundPage = () => {
         </p>
 
         <div className="mt-4 flex items-center justify-center gap-x-6">
-          <Link href="/" className="btn btn-primary">
+          <Link
+            href="/"
+            className="px-4 py-2 rounded-xl bg-red-400 text-white hover:bg-red-500 transition cursor-pointer"
+          >
             Go back home
           </Link>
         </div>

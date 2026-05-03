@@ -1,4 +1,5 @@
 "use client";
+import "animate.css";
 import { authClient } from "@/lib/auth-client";
 import { Check } from "@gravity-ui/icons";
 import {
@@ -17,6 +18,7 @@ import { toast } from "react-toastify";
 
 const RegisterPage = () => {
   const router = useRouter();
+
   const onSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -38,82 +40,89 @@ const RegisterPage = () => {
       router.push("/login");
     }
   };
+
   return (
-    <Card className=" bg-[#e9dfdb] border mx-auto w-125 py-10 mt-12">
-      <h1 className="text-center text-2xl font-bold">Registration</h1>
+    <div className="animate__animated animate__fadeInUp">
+      <Card className="bg-[#e9dfdb] border mx-auto max-w-125 py-10 mt-12 animate__animated animate__zoomIn">
+        <h1 className="text-center text-2xl font-bold animate__animated animate__fadeInDown">
+          Registration
+        </h1>
 
-      <Form className="flex w-96 mx-auto flex-col gap-4" onSubmit={onSubmit}>
-        <TextField isRequired name="name" type="text">
-          <Label>Name</Label>
-          <Input placeholder="Enter your name" />
-          <FieldError />
-        </TextField>
-
-        <TextField isRequired name="image" type="text">
-          <Label>Image URL</Label>
-          <Input placeholder="Image URL" />
-          <FieldError />
-        </TextField>
-
-        <TextField
-          isRequired
-          name="email"
-          type="email"
-          validate={(value) => {
-            if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value)) {
-              return "Please enter a valid email address";
-            }
-
-            return null;
-          }}
+        <Form
+          className="flex max-w-96 mx-auto flex-col gap-4 animate__animated animate__fadeIn"
+          onSubmit={onSubmit}
         >
-          <Label>Email</Label>
-          <Input placeholder="john@example.com" />
-          <FieldError />
-        </TextField>
+          <TextField isRequired name="name" type="text">
+            <Label>Name</Label>
+            <Input placeholder="Enter your name" />
+            <FieldError />
+          </TextField>
 
-        <TextField
-          isRequired
-          minLength={8}
-          name="password"
-          type="password"
-          validate={(value) => {
-            if (value.length < 8) {
-              return "Password must be at least 8 characters";
-            }
-            if (!/[A-Z]/.test(value)) {
-              return "Password must contain at least one uppercase letter";
-            }
-            if (!/[0-9]/.test(value)) {
-              return "Password must contain at least one number";
-            }
+          <TextField isRequired name="image" type="text">
+            <Label>Image URL</Label>
+            <Input placeholder="Image URL" />
+            <FieldError />
+          </TextField>
 
-            return null;
-          }}
-        >
-          <Label>Password</Label>
-          <Input placeholder="Enter your password" />
-          <Description>
-            Must be at least 8 characters with 1 uppercase and 1 number
-          </Description>
-          <FieldError />
-        </TextField>
+          <TextField
+            isRequired
+            name="email"
+            type="email"
+            validate={(value) => {
+              if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value)) {
+                return "Please enter a valid email address";
+              }
+              return null;
+            }}
+          >
+            <Label>Email</Label>
+            <Input placeholder="john@example.com" />
+            <FieldError />
+          </TextField>
 
-        {/* <Link href="/login" className="flex gap-2"> */}
-        <button className="block mx-auto mt-4 px-6 py-2 border border-red-400 text-red-400 rounded hover:bg-red-400 hover:text-white transition cursor-pointer">
-          Register
-        </button>
-        {/* </Link> */}
-      </Form>
-      <div className="mt-6 text-center text-sm">
-        <p className="text-[#706F6F] font-semibold">
-          Already have an account?{" "}
-          <Link href="/login" className="text-[#F34949] hover:underline">
-            Login
-          </Link>
-        </p>
-      </div>
-    </Card>
+          <TextField
+            isRequired
+            minLength={8}
+            name="password"
+            type="password"
+            validate={(value) => {
+              if (value.length < 8) {
+                return "Password must be at least 8 characters";
+              }
+              if (!/[A-Z]/.test(value)) {
+                return "Password must contain at least one uppercase letter";
+              }
+              if (!/[0-9]/.test(value)) {
+                return "Password must contain at least one number";
+              }
+              return null;
+            }}
+          >
+            <Label>Password</Label>
+            <Input placeholder="Enter your password" />
+            <Description>
+              Must be at least 8 characters with 1 uppercase and 1 number
+            </Description>
+            <FieldError />
+          </TextField>
+
+          {/* Button */}
+          <button className="block mx-auto mt-4 px-6 py-2 border border-red-400 text-red-400 rounded hover:bg-red-400 hover:text-white transition cursor-pointer animate__animated animate__pulse animate__delay-1s">
+            Register
+          </button>
+        </Form>
+
+        {/* Login link */}
+        <div className="mt-6 text-center text-sm animate__animated animate__fadeInUp">
+          <p className="text-[#706F6F] font-semibold">
+            Already have an account?{" "}
+            <Link href="/login" className="text-[#F34949] hover:underline">
+              Login
+            </Link>
+          </p>
+        </div>
+      </Card>
+    </div>
   );
 };
 

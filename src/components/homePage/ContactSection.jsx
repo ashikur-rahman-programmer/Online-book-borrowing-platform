@@ -7,24 +7,30 @@ import {
   FaTwitter,
   FaYoutube,
 } from "react-icons/fa";
+import "animate.css";
 
-export default function ContactSection() {
+const ContactSection = () => {
   return (
     <section className="bg-[#e9dfdb] py-20 px-4 text-center">
-      <p className="text-sm tracking-widest text-red-400 mb-2">CONTACT</p>
+      {/* Top Text */}
+      <p className="text-sm tracking-widest text-red-400 mb-2 animate__animated animate__fadeInDown">
+        CONTACT
+      </p>
 
-      <h2 className="text-3xl md:text-4xl font-semibold text-[#2c3e50] mb-4">
+      <h2 className="text-3xl md:text-4xl font-semibold text-[#2c3e50] mb-4 animate__animated animate__fadeInUp">
         Write anything
       </h2>
 
-      <div className="flex justify-center items-center gap-2 mb-14">
+      {/* Divider */}
+      <div className="flex justify-center items-center gap-2 mb-14 animate__animated animate__fadeIn">
         <div className="h-[1px] w-16 bg-red-300"></div>
         <div className="w-3 h-3 bg-red-300 rotate-45"></div>
         <div className="h-[1px] w-16 bg-red-300"></div>
       </div>
 
       <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 text-left">
-        <div className="md:col-span-2 bg-[#d8ccc7] p-8 rounded-sm">
+        {/* Form */}
+        <div className="md:col-span-2 bg-[#d8ccc7] p-8 rounded-sm animate__animated animate__fadeInLeft">
           <form className="space-y-4">
             <input
               type="text"
@@ -61,7 +67,8 @@ export default function ContactSection() {
           </form>
         </div>
 
-        <div className="bg-[#d8ccc7] p-8 rounded-sm space-y-6">
+        {/* Contact Info */}
+        <div className="bg-[#d8ccc7] p-8 rounded-sm space-y-6 animate__animated animate__fadeInRight">
           <div>
             <p className="text-xs text-gray-600 font-semibold mb-1">ADDRESS:</p>
             <p className="text-sm text-[#2c3e50]">
@@ -77,7 +84,7 @@ export default function ContactSection() {
 
           <div>
             <p className="text-xs text-gray-600 font-semibold mb-1">EMAIL:</p>
-            <p className="text-sm text-[#2c3e50]"> support@bookborrow.com</p>
+            <p className="text-sm text-[#2c3e50]">support@bookborrow.com</p>
           </div>
 
           <div>
@@ -86,25 +93,27 @@ export default function ContactSection() {
             </p>
 
             <div className="flex gap-2">
-              <span className="w-8 h-8 flex items-center justify-center bg-red-400 text-white text-sm cursor-pointer hover:bg-red-500 transition-all">
-                <FaFacebookF />
-              </span>
-              <span className="w-8 h-8 flex items-center justify-center bg-red-400 text-white text-sm cursor-pointer hover:bg-red-500 transition-all">
-                <FaTwitter />
-              </span>
-              <span className="w-8 h-8 flex items-center justify-center bg-red-400 text-white text-sm cursor-pointer hover:bg-red-500 transition-all">
-                <FaLinkedinIn />
-              </span>
-              <span className="w-8 h-8 flex items-center justify-center bg-red-400 text-white text-sm cursor-pointer hover:bg-red-500 transition-all">
-                <FaYoutube />
-              </span>
-              <span className="w-8 h-8 flex items-center justify-center bg-red-400 text-white text-sm cursor-pointer hover:bg-red-500 transition-all">
-                <FaCommentDots />
-              </span>
+              {[
+                FaFacebookF,
+                FaTwitter,
+                FaLinkedinIn,
+                FaYoutube,
+                FaCommentDots,
+              ].map((Icon, i) => (
+                <span
+                  key={i}
+                  className="w-8 h-8 flex items-center justify-center bg-red-400 text-white text-sm cursor-pointer hover:bg-red-500 transition-all animate__animated animate__zoomIn"
+                  style={{ animationDelay: `${i * 0.1}s` }}
+                >
+                  <Icon />
+                </span>
+              ))}
             </div>
           </div>
         </div>
       </div>
     </section>
   );
-}
+};
+
+export default ContactSection;

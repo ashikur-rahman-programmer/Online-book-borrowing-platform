@@ -1,4 +1,5 @@
 "use client";
+import "animate.css";
 import { useState } from "react";
 import { Link, Button, Spinner } from "@heroui/react";
 import logoImg from "@/assets/logo.png";
@@ -16,8 +17,8 @@ export default function Navbar() {
   const user = session?.user;
 
   return (
-    <nav className="w-full sticky top-0 z-40  border-b border-separator bg-background/70 backdrop-blur-lg">
-      <header className="container mx-auto flex h-16  items-center justify-between ">
+    <nav className="w-full sticky top-0 z-40 border-b border-separator bg-background/70 backdrop-blur-lg animate__animated animate__fadeInDown">
+      <header className="container mx-auto flex h-16 items-center justify-between animate__animated animate__fadeInDown">
         <div className="flex items-center gap-2 md:gap-4">
           <button
             className="md:hidden"
@@ -54,7 +55,8 @@ export default function Navbar() {
             <Image src={logoImg} alt="Logo" width={150} height={50} />
           </Link>
         </div>
-        <ul className="hidden items-center gap-4 md:flex">
+
+        <ul className="hidden items-center gap-4 md:flex animate__animated animate__fadeIn">
           <li>
             <NavLink href="/">Home</NavLink>
           </li>
@@ -65,17 +67,15 @@ export default function Navbar() {
             <NavLink href="/my-profile">My Profile</NavLink>
           </li>
         </ul>
+
         {isPending ? (
           <Spinner color="success" />
         ) : user ? (
-          <div className="flex items-center gap-2 md:gap-4">
-            <p
-              className="text-xs md:text-lg whitespace-nowrap md:whitespace-normal pl-1 flex flex-col md:gap-2 md:flex-row tracking-tight
-          bg-gradient-to-r from-red-500 to-purple-600 
-          bg-clip-text text-transparent animate-gradient-x"
-            >
+          <div className="flex items-center gap-2 md:gap-4 animate__animated animate__fadeInRight">
+            <p className="text-xs md:text-lg whitespace-nowrap md:whitespace-normal pl-1 flex flex-col md:gap-2 md:flex-row tracking-tight bg-gradient-to-r from-red-500 to-purple-600 bg-clip-text text-transparent">
               <span>Welcome,</span> {user.name}!
             </p>
+
             <button
               onClick={async () => {
                 toast.success("Logging out...");
@@ -96,8 +96,9 @@ export default function Navbar() {
           </NavLink>
         )}
       </header>
+
       {isMenuOpen && (
-        <div className="border-t border-separator md:hidden">
+        <div className="border-t border-separator md:hidden animate__animated animate__fadeInDown">
           <ul className="flex flex-col gap-2 p-4">
             <li>
               <NavLink href="/" className="block py-2">
